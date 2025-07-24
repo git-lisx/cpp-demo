@@ -1,0 +1,9 @@
+{
+  "name": "my-crow-server",
+  "version-string": "0.1.0",
+  "dependencies": [
+    "crow",
+    "nlohmann-json"
+  ]
+}
+
