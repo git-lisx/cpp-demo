@@ -5,13 +5,37 @@ C++项目demo
 - my_crow_server：纯CMakeLists.txt项目
 - my_vcpkg_crow_server：CMakeLists.txt + vcpkg包管理项目
 
-## vcpkg
+## my_crow_server
 
-链接：https://github.com/microsoft/vcpkg
-安装
+纯CMakeLists.txt项目
+
+### 编译
 
 ```shell
-# 安装
+# 项目结构
+my_crow_server/
+├── CMakeLists.txt
+├── build/
+├── src/
+│   └── server.cpp
+
+# 构建步骤
+mkdir build
+cd build
+cmake ..  # 读取 CMakeLists.txt，下载依赖，生成 Makefile
+make      # 编译 + 链接，生成可执行程序
+./server  # 执行
+```
+
+## my_vcpkg_crow_server
+
+CMakeLists.txt + vcpkg包管理项目
+
+### 安装vcpkg
+
+链接：https://github.com/microsoft/vcpkg
+
+```shell
 git clone https://github.com/microsoft/vcpkg.git
 cd vcpkg && ./bootstrap-vcpkg.sh
 
@@ -23,9 +47,10 @@ source ~/.bashrc
 
 ```
 
-## 编译自己的项目
+### 编译自己的项目
 
 ```shell
+# 项目结构
 my_vcpkg_crow_server/
 ├── CMakeLists.txt
 ├── vcpkg.json
@@ -34,7 +59,7 @@ my_vcpkg_crow_server/
 
 
 # 安装依赖
-cd /home/utenet/lisx/my_vcpkg_crow_server
+cd ./cpp-demo/my_vcpkg_crow_server
 vcpkg install     # 安装依赖vcpkg.json
 
 mkdir build && cd build
