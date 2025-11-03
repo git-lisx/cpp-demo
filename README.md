@@ -33,6 +33,8 @@ CMakeLists.txt + vcpkg包管理项目
 
 ### 安装vcpkg
 
+> 微软维护的包管理工具
+
 链接：https://github.com/microsoft/vcpkg
 
 ```shell

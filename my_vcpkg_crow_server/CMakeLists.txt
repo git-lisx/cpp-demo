@@ -22,3 +22,6 @@ add_executable(server src/server.cpp)
 
 # 链接 nlohmann_json 和 pthread
 target_link_libraries(server PRIVATE nlohmann_json::nlohmann_json pthread)
+
+# 添加接口示例可执行文件
+add_executable(interface_example examples/interface_example.cpp)
