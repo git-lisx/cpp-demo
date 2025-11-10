@@ -26,3 +26,13 @@ add_executable(pointer_demo
     src/demo/pointer_demo.cpp)
 
 
+# 添加这一行来打印 PROJECT_SOURCE_DIR 的值
+#message(STATUS "PROJECT_SOURCE_DIR = ${PROJECT_SOURCE_DIR}")
+#message(STATUS "CATKIN_DEVEL_PREFIX = ${CATKIN_DEVEL_PREFIX}")
+
+# 打印所有CMake变量（这会产生大量输出）
+get_cmake_property(_variableNames VARIABLES)
+list (SORT _variableNames)
+foreach (_variableName ${_variableNames})
+ message(STATUS "${_variableName}=${${_variableName}}")
+endforeach()
