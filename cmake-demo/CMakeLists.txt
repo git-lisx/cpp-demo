@@ -7,6 +7,9 @@ project(demo_project)
 # 设置 C++ 标准为 C++14
 set(CMAKE_CXX_STANDARD 14)
 
+# 完全静态链接（不推荐）
+#set(CMAKE_EXE_LINKER_FLAGS "-static")
+
 # 包含头文件目录
 # include_directories(${CMAKE_SOURCE_DIR}/include)
 include_directories(include)
@@ -25,6 +28,11 @@ add_executable(demo_main
 add_executable(pointer_demo
     src/demo/pointer_demo.cpp)
 
+# 添加 class_interface_demo 的可执行文件
+add_executable(class_interface_demo
+        src/class_interface_demo.cpp
+        src/car.cpp)
+
 
 # 添加这一行来打印 PROJECT_SOURCE_DIR 的值
 #message(STATUS "PROJECT_SOURCE_DIR = ${PROJECT_SOURCE_DIR}")
@@ -34,5 +42,5 @@ add_executable(pointer_demo
 get_cmake_property(_variableNames VARIABLES)
 list (SORT _variableNames)
 foreach (_variableName ${_variableNames})
- message(STATUS "${_variableName}=${${_variableName}}")
+ message(STATUS "CMake内置的变量 ${_variableName}=${${_variableName}}")
 endforeach()

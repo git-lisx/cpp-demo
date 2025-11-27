@@ -2,7 +2,8 @@
 
 C++项目demo
 
-- my_crow_server：纯CMakeLists.txt项目
+- cmake-demo：纯CMakeLists.txt项目
+- my_crow_server：纯CMakeLists.txt项目 + 第三方依赖
 - my_vcpkg_crow_server：CMakeLists.txt + vcpkg包管理项目
 
 ## my_crow_server

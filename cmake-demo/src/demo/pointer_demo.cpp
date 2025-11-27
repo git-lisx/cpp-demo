@@ -36,14 +36,16 @@ int main() {
     s1->display(); // 使用箭头操作符访问成员函数
     s1->updateScore(98); // 使用箭头操作符修改数据
     delete s1; // 记得释放内存
+    std::cout << std::endl;
 
-    std::cout << "\n=== 2. 智能指针的使用（自动释放内存）推荐 ===" << std::endl;
+    std::cout << "=== 2. 智能指针的使用（自动释放内存）推荐 ===" << std::endl;
     auto s2 = std::make_unique<Student>("李四", 88);
     s2->display(); // 智能指针也使用箭头操作符
     s2->updateScore(92); // 不需要手动释放内存
     s2->name_ = "王五";
+    std::cout << std::endl;
 
-    std::cout << "\n=== 3. 指针数组的使用 ===" << std::endl;
+    std::cout << "=== 3. 指针数组的使用 ===" << std::endl;
     // 使用智能指针数组
     std::unique_ptr<Student> students[] = {
         std::make_unique<Student>("赵六", 85),
